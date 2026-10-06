@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { Map as MapLibreMap } from "maplibre-gl";
-import type { ShuttlePlan, Station } from "../store/incident";
+import type { ShuttlePlan, ViewStation } from "../store/incident";
 
 const emptyStyle = {
   version: 8 as const,
@@ -10,7 +10,7 @@ const emptyStyle = {
   layers: [{ id: "background", type: "background" as const, paint: { "background-color": "#dce9f5" } }]
 };
 
-export function MapPanel({ stations, plans }: { stations: Station[]; plans: ShuttlePlan[] }) {
+export function MapPanel({ stations, plans }: { stations: ViewStation[]; plans: ShuttlePlan[] }) {
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
 
